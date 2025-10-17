@@ -26,10 +26,11 @@ try {
 const API_URL = process.env.API_URL || 'https://common-api.sagano.linktivity.io/v1/inventories/2025-11-03/services/37?product_id=51&base_booking_id=';
 const BOOK_URL = process.env.BOOK_URL || 'https://ars-saganokanko.triplabo.jp/activity/zt/LINKTIVITY-YRBTL/';
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL || 'YOUR_DISCORD_WEBHOOK_URL_HERE';
-const TARGET_CAR = '2号車';
+// const TARGET_CAR = '2号車';
+const TARGET_CAR = 'リッチ号/5号車';
 
 // 配置
-const CHECK_INTERVAL = 20 * 60 * 1000; // 5 分鐘（毫秒）
+const CHECK_INTERVAL = 5 * 60 * 1000; // 5 分鐘（毫秒）
 const MAX_RUNTIME = 5.9 * 60 * 60 * 1000; // 5.9 小時（留一點緩衝避免超時）
 
 function fetchInventory() {
