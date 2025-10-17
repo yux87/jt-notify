@@ -1,0 +1,15 @@
+{
+  "name": "api-monitor-notify",
+  "version": "1.0.0",
+  "description": "API 監控工具",
+  "main": "monitor.js",
+  "scripts": {
+    "start": "node monitor.js"
+  },
+  "keywords": ["train", "monitor", "notification"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

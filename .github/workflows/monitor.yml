@@ -1,0 +1,28 @@
+name: 座位監控
+
+on:
+  schedule:
+    # 每天 4 個時段執行（UTC 時間）
+    # 6:20, 12:20, 18:20, 0:20 = UTC 22:20, 4:20, 10:20, 16:20
+    - cron: '20 4,10,16,22 * * *'
+
+  # 允許手動觸發
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 代碼
+        uses: actions/checkout@v4
+
+      - name: 設定 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: 執行監控腳本
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: node monitor.js
